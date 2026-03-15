@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-zerot-50: #f0f9ff;
+  --color-zerot-100: #e0f2fe;
+  --color-zerot-200: #bae6fd;
+  --color-zerot-300: #7dd3fc;
+  --color-zerot-400: #38bdf8;
+  --color-zerot-500: #0ea5e9;
+  --color-zerot-600: #0284c7;
+
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-200: #99f6e4;
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+
+  --color-surface: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-surface-glass: rgba(255, 255, 255, 0.72);
+  --color-surface-glass-strong: rgba(255, 255, 255, 0.88);
+
+  --color-border-glass: rgba(148, 163, 184, 0.18);
+  --color-border-subtle: rgba(148, 163, 184, 0.12);
+
+  --shadow-glass: 0 4px 24px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+  --shadow-glass-lg: 0 8px 40px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(15, 23, 42, 0.04);
+  --shadow-float: 0 12px 48px rgba(15, 23, 42, 0.1), 0 4px 12px rgba(15, 23, 42, 0.05);
+  --shadow-soft: 0 1px 3px rgba(15, 23, 42, 0.06);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-surface text-slate-800 font-sans;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.06), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 50%, rgba(20, 184, 166, 0.04), transparent);
+    background-attachment: fixed;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glass-panel {
+    background: var(--color-surface-glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--color-border-glass);
+    box-shadow: var(--shadow-glass);
+  }
+  .glass-panel-strong {
+    background: var(--color-surface-glass-strong);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--color-border-glass);
+    box-shadow: var(--shadow-glass);
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border-subtle);
+    box-shadow: var(--shadow-soft);
+  }
+  .float-shadow {
+    box-shadow: var(--shadow-float);
+  }
+  .ambient-shadow {
+    box-shadow: var(--shadow-glass-lg);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out both;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out both;
+  }
+  .animate-pulse-gentle {
+    animation: pulseGentle 3s ease-in-out infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulseGentle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
 }
