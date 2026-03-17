@@ -76,8 +76,8 @@ graph TD
 
 1. **Clone & Install:**
    ```bash
-   git clone https://github.com/Toghrul-Aliyev/rm--rf.git
-   cd rm--rf
+   git clone https://github.com/sudormrf0/ZeroT.git
+   cd ZeroT
    npm install
    ```
 2. **Setup Env:** Create `.env.local` with `GEMINI_API_KEY` and `NEXT_PUBLIC_LOGIN_URL`.
