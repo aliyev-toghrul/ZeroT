@@ -82,7 +82,7 @@ graph TD
 
 1. **Clone & Install:**
    ```bash
-   git clone https://github.com/Jowker17/ZeroT.git
+   git clone https://github.com/aliyev-toghrul/ZeroT.git
    cd ZeroT
    npm install
    ```
