@@ -6,7 +6,7 @@ ZeroT is a mission-driven, AI-native cybersecurity readiness platform designed s
 > **ZeroT provides the clarity SMEs need to respond to cyber threats with confidence, turning uncertainty into actionable readiness.**
 
 ## 🚀 Live Demo
-**[Launch ZeroT MVP](https://rm-rf-lovat.vercel.app)**
+**[Launch ZeroT MVP](https://zerot.vercel.app)**
 
 ---
 
@@ -82,7 +82,7 @@ graph TD
 
 1. **Clone & Install:**
    ```bash
-   git clone https://github.com/sudormrf0/ZeroT.git
+   git clone https://github.com/Jowker17/ZeroT.git
    cd ZeroT
    npm install
    ```
